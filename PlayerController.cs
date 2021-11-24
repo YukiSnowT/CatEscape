@@ -10,16 +10,28 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    public void LButtonDown(){
+        if(transform.position.x > -6){
+            transform.Translate(-3,0,0);
+        }
+    }
+
+    public void RButtonDown(){
+        if(transform.position.x < 6){
+            transform.Translate(3,0,0);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
         //左矢印
         if(Input.GetKeyDown(KeyCode.LeftArrow)){
-            transform.Translate(-3,0,0);
+            LButtonDown();
         }
         //右矢印
         if(Input.GetKeyDown(KeyCode.RightArrow)){
-            transform.Translate(3,0,0);
+            RButtonDown();
         }
         
     }
